@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous"
     referrerpolicy="no-referrer"></script>
@@ -30,6 +28,12 @@
       color: #FFF;
       background: black;
       border: 2px solid darkgreen;
+    }
+
+    #p5 {
+      font-family: 'Oleo Script', cursive;
+      color: crimson;
+      font-size: 2rem;
     }
 
     .inputs {
@@ -56,6 +60,7 @@
     <p id='p2'>Hope all of you are Healthy and Happy</p>
     <p id='p3'>Take a deep breath and blow out slowly</p>
     <p id='p4' style="color: rosemary;"></p>
+    <p class="p5">We know that everything will be okay</p>
   </div>
   <button id='b1'>CLICK HERE TO ERASE ALL TEXT</button>
   <button id='b2'>CLICK HERE TO REESTABLISH ALL TEXT</button>
@@ -78,24 +83,25 @@
 
     function stylePtags() {
       v1 = $('#p1').attr('style');
-      $("#p1").append(' -- The style for this tag is ' + '"' + v1 + '"')
+      $("#p1").append(' -- The style for this tag is ' + '"' + v1 + '"');
       $('#p2').attr('class', 'goldenPatch');
       $('#p3').attr('style', 'color: red; font-size: 28px');
-      $("#p4").html('It is a good habit to relax as often as you can')
+      $("#p4").html('It is a good habit to relax as often as you can');
+      $(".p5").attr('id', 'p5');
     }
 
     $("#b1").click(() => {
-      $(".firstDiv").text("We have now erased all the other text")
-      $("#b1").hide()
-      $("#b2").show()
+      $(".firstDiv").text("We have now erased all the other text");
+      $("#b1").hide();
+      $("#b2").show();
     });
 
     $("#b2").click(() => {
-      $(".firstDiv").text("")
-      $(".firstDiv").prepend("<p id='p1' style='color: #FFF; font-size: 19px;'>Good Morning Everyone.</p><p id='p2'>Hope all of you are Healthy and Happy</p><p id='p3'>Take a deep breath and blow out slowly</p><p id='p4' style='color: rosemary;'></p>")
-      stylePtags()
-       $("#b2").hide()
-       $("#b1").show()
+      $(".firstDiv").text("");
+      $(".firstDiv").prepend("<p id='p1' style='color: #FFF; font-size: 19px;'>Good Morning Everyone.</p><p id='p2'>Hope all of you are Healthy and Happy</p><p id='p3'>Take a deep breath and blow out slowly</p><p id='p4' style='color: rosemary;'></p><p class='p5'>We know that everything will be okay</p>");
+      stylePtags();
+       $("#b2").hide();
+       $("#b1").show();
     })
 
     let ipV1 = $("input:text").val()
