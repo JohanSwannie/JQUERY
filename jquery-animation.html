@@ -132,16 +132,14 @@
         }
       );
 
+      $("#b1").dblclick(() => $(".firstDiv").fadeout());
+
       $(".secondDiv").click(() => {
-        $(".firstDiv").fadeTo(1000, 0.5);
+        $(".firstDiv").fadeTo(2000, 0.5);
       });
 
       $(document).dblclick(() => {
         $(".secondDiv").slideUp(3000);
-      });
-
-      $(document).click(() => {
-        $(".secondDiv").slideDown(7000);
       });
 
       $("#b1").click(() => {
@@ -152,6 +150,37 @@
       $("#b2").click(() => {
         $(".firstDiv").fadeToggle(4000);
         $(".secondDiv").fadeToggle(4000);
+      });
+
+      $(document).ready(function () {
+        $(document).mousedown(function (event) {
+          switch (event.which) {
+            case 1:
+              $(".firstDiv").animate({
+                width: "100px",
+                height: "100px",
+              });
+              $(".firstDiv").fadeTo(1000, 0.3);
+              $(".secondDiv").slideDown(7000);
+              break;
+            case 2:
+              $(".firstDiv").animate({
+                width: "500px",
+                height: "500px",
+              });
+              $(".firstDiv").fadeTo(1000, 0.6);
+              break;
+            case 3:
+              $(".firstDiv").animate({
+                width: "400px",
+                height: "400px",
+              });
+              $(".firstDiv").fadeTo(1000, 0.9);
+              break;
+            default:
+              alert("Nothing");
+          }
+        });
       });
     </script>
   </body>
