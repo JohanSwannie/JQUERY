@@ -152,8 +152,8 @@
         $(".secondDiv").fadeToggle(4000);
       });
 
-      $(document).ready(function () {
-        $(document).mousedown(function (event) {
+      $(document).ready(() => {
+        $(document).mousedown((event) => {
           switch (event.which) {
             case 1:
               $(".firstDiv").animate({
