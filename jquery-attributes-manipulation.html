@@ -78,19 +78,19 @@
 
     function stylePtags() {
       v1 = $('#p1').attr('style');
-      $("#p1").append(' -- The style for this tag is ' + v1)
+      $("#p1").append(' -- The style for this tag is ' + '"' + v1 + '"')
       $('#p2').attr('class', 'goldenPatch');
       $('#p3').attr('style', 'color: red; font-size: 28px');
       $("#p4").html('It is a good habit to relax as often as you can')
     }
 
-    $("#b1").click(function () {
+    $("#b1").click(() => {
       $(".firstDiv").text("We have now erased all the other text")
       $("#b1").hide()
       $("#b2").show()
     });
 
-    $("#b2").click(function () {
+    $("#b2").click(() => {
       $(".firstDiv").text("")
       $(".firstDiv").prepend("<p id='p1' style='color: #FFF; font-size: 19px;'>Good Morning Everyone.</p><p id='p2'>Hope all of you are Healthy and Happy</p><p id='p3'>Take a deep breath and blow out slowly</p><p id='p4' style='color: rosemary;'></p>")
       stylePtags()
