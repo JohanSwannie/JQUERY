@@ -12,9 +12,13 @@
     <style>
       body {
         background: orange;
+        user-select: none;
       }
 
       .firstDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         top: 0;
         left: 0;
@@ -25,6 +29,9 @@
       }
 
       .secondDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         top: 0;
         right: 0;
@@ -125,24 +132,24 @@
         }
       );
 
-      $(".firstDiv").click(function () {
-        $(".secondDiv").show(3000);
+      $(".secondDiv").click(() => {
+        $(".firstDiv").fadeTo(1000, 0.5);
       });
 
-      $(document).dblclick(function () {
-        $(".secondDiv").slideUp(5000);
+      $(document).dblclick(() => {
+        $(".secondDiv").slideUp(3000);
       });
 
-      $(document).click(function () {
+      $(document).click(() => {
         $(".secondDiv").slideDown(7000);
       });
 
-      $("#b1").click(function () {
+      $("#b1").click(() => {
         $(".firstDiv").slideToggle(4000);
         $(".secondDiv").slideToggle(4000);
       });
 
-      $("#b2").click(function () {
+      $("#b2").click(() => {
         $(".firstDiv").fadeToggle(4000);
         $(".secondDiv").fadeToggle(4000);
       });
