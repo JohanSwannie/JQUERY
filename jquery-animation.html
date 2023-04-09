@@ -86,7 +86,7 @@
           width: "400px",
         },
         2000,
-        function () {
+        () => {
           $(".firstDiv").html("End of Animation for first Div");
           $("#showQueue1").html(
             "Queue Length for firstDiv is " + $(".firstDiv").queue().length
@@ -104,11 +104,11 @@
           complete: function () {
             $(this).animate(
               {
-                height: "300px",
-                width: "350px",
+                height: "400px",
+                width: "400px",
               },
               3000,
-              function () {
+              () => {
                 $(".secondDiv").html("End of Animation for second Div");
                 $("#showQueue2").html(
                   "Queue Length for secondDiv is " +
@@ -117,51 +117,42 @@
               }
             );
           },
-          start: function () {
+          start: () => {
             $(".secondDiv").append("Start Animation for second Div");
           },
         }
       );
 
-      $(".firstDiv").mouseenter(
-        function () {
-          $(this).stop(true, true).fadeOut();
-        },
-        function () {
-          $(this).stop(true, true).fadeTo(5000, 0.2);
-        }
-      );
+      $(".firstDiv").mouseenter(function () {
+        $(this).stop(true, true).fadeTo(2000, 0.2);
+      });
 
       $("#b1").dblclick(() => $(".firstDiv").fadeout());
-
-      $(".secondDiv").click(() => {
-        $(".firstDiv").fadeTo(2000, 0.5);
-      });
 
       $(document).dblclick(() => {
         $(".secondDiv").slideUp(3000);
       });
 
       $("#b1").click(() => {
-        $(".firstDiv").slideToggle(4000);
-        $(".secondDiv").slideToggle(4000);
+        $(".firstDiv").slideToggle(3000);
+        $(".secondDiv").slideToggle(3000);
       });
 
       $("#b2").click(() => {
-        $(".firstDiv").fadeToggle(4000);
-        $(".secondDiv").fadeToggle(4000);
+        $(".firstDiv").fadeToggle(3000);
+        $(".secondDiv").fadeToggle(3000);
       });
 
       $(document).ready(() => {
-        $(document).mousedown((event) => {
-          switch (event.which) {
+        $(document).mousedown((stellie) => {
+          switch (stellie.which) {
             case 1:
               $(".firstDiv").animate({
                 width: "100px",
                 height: "100px",
               });
               $(".firstDiv").fadeTo(1000, 0.3);
-              $(".secondDiv").slideDown(7000);
+              $(".secondDiv").slideDown(3000);
               break;
             case 2:
               $(".firstDiv").animate({
