@@ -51,6 +51,22 @@
     #b2 {
       display: none;
     }
+
+    #butty {
+      position: absolute;
+      top: 30px;
+      right: 300px;
+      width: 20rem;
+      height: 7rem;
+      background-color: navy;
+      color: #FFF;
+    }
+
+    img {
+      position: absolute;
+      bottom: 30px;
+      right: 100px;
+    }
   </style>
 </head>
 
@@ -74,6 +90,8 @@
   <div class="inputValues">
     <p id='ip1'></p>
   </div>
+  <button id="butty">Enter into this box for a new image</button>
+  <img src="" width=400 height=300 alt="Horse Picture">
   <script>
     let v1
 
@@ -104,9 +122,26 @@
        $("#b1").show();
     })
 
-    let ipV1 = $("input:text").val()
-    $("#ip1").html("The input value for text is " + ipV1)
+    let ipV1 = $("input:text").val();
+    $("#ip1").html("The input value for text is " + ipV1);
 
+    $('#butty').mouseenter( () => {
+      let pickedImage = '';
+      let sources = ["https://media.istockphoto.com/id/1019461046/photo/wild-horses-running-free.jpg?s=612x612&w=0&k=20&c=00luEeeClnG_NZTu-E3lM4-BwNOsKRag-5e-lxv3XbY=",
+                     "https://i0.wp.com/thepixelnomad.com/wp-content/uploads/2020/11/201028-Eros083-edit.jpg?fit=1500%2C1000&ssl=1",
+                     "https://a-z-animals.com/media/2021/12/Best-Horses-Quarter-Horse.jpg",
+                     "https://media.istockphoto.com/id/1296184856/photo/portrait-of-a-young-sports-horse.jpg?b=1&s=170667a&w=0&k=20&c=1K0eg9wUEjxAdmW0Vt_Plpl1bQb9xhNeatErQfNzL-M=",
+                     "https://www.vetvoice.com.au/imagevault/publishedmedia/vmb0bvjqwykecl5fihr5/horses_-_equine.jpg",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCx6uMVCgtdn5Wd-8R0bgbbIoBOij_PkHl4g&usqp=CAU",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROyolPck7hPbdwIPMgsEVm-ryD5E9tQjyo0w&usqp=CAU",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Uiua4QRxGyvqfWhLOrihN4dRmxduDhDEyubJ2rLwQjOX0ih4Me11Y2bzUfl7ttfdKH0&usqp=CAU",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxBSTjJa01DjxHgUP6uwEJVhj2Z6QTlsOnk--noxWSAowBiBpQj2HnvW-N2nQTTbx3EGU&usqp=CAU",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSySKAL_TqX9a5gqScfpCr9w90ZgAKMIoiXw&usqp=CAU",
+                     "https://www.cfa.vic.gov.au/Images/UserUploadedImages/368/horses2.jpg",
+                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHLZaXGQOjH4kDaXZbAmn8xy9ZLnzJRRl0Pw&usqp=CAU"];
+      pickedImage = sources[(Math.floor(Math.random() * 12))];
+      $("img").attr("src", pickedImage);
+    })
   </script>
 
 </body>
