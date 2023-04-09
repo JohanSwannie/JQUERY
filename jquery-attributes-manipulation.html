@@ -49,6 +49,12 @@
       left: 1px;
     }
 
+    #ip2 {
+      position: absolute;
+      top: 600px;
+      left: 1px;
+    }
+
     #b2 {
       display: none;
     }
@@ -78,6 +84,7 @@
     <p id='p3'>Take a deep breath and blow out slowly</p>
     <p id='p4' style="color: rosemary;"></p>
     <p class="p5">We know that everything will be okay</p>
+    <p id="p6">What shall we do for now my dear friends?</p>
   </div>
   <button id='b1'>CLICK HERE TO ERASE ALL TEXT</button>
   <button id='b2'>CLICK HERE TO REESTABLISH ALL TEXT</button>
@@ -90,6 +97,7 @@
   </div>
   <div class="inputValues">
     <p id='ip1'></p>
+    <p id='ip2'></p>
   </div>
   <button id="butty">Enter into this box for a new image</button>
   <img src="" width=600 height=450 alt="Horse Picture">
@@ -125,6 +133,9 @@
 
     let ipV1 = $("input:text").val();
     $("#ip1").html("The input value for text is " + ipV1);
+
+    let ipV2 = $("#p6").text();
+    $("#ip2").html("The value of id p6 is " + ipV2);
 
     $('#butty').mouseenter( () => {
       let pickedImage = '';
