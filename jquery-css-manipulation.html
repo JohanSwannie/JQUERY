@@ -42,7 +42,7 @@
 
       .thirdDiv {
         color: darkgreen;
-        font-size: 50px;
+        font-size: 30px;
       }
 
       .lastP {
@@ -57,7 +57,14 @@
         padding: 0.5rem;
       }
 
-      button {
+      .newPattern {
+        color: #000;
+        background-color: #fff;
+        font-size: 0.7rem;
+      }
+
+      #b1,
+      #b2 {
         position: absolute;
         top: 625px;
         left: 0;
@@ -66,6 +73,11 @@
         margin-right: 10px;
         background: gold;
         border: 2px solid green;
+      }
+
+      #b2 {
+        position: absolute;
+        left: 550px;
       }
     </style>
   </head>
@@ -91,7 +103,8 @@
         <p>than planned</p>
       </div>
       <pre></pre>
-      <button>Toggle color</button>
+      <button id="b1">Toggle CSS properties at secondDiv</button>
+      <button id="b2">Toggle CSS properties at lastDiv</button>
     </div>
 
     <script>
@@ -106,7 +119,7 @@
 
       $("#nr2").addClass("secondDiv");
 
-      $("button").click(function () {
+      $("#b1").click(function () {
         $("#nr2").toggleClass("thirdDiv");
       });
 
@@ -122,6 +135,10 @@
         .each(function () {
           $(this).addClass("lastP");
         });
+
+      $("#b2").click(function () {
+        $(".lastP").toggleClass("newPattern");
+      });
     </script>
   </body>
 </html>
